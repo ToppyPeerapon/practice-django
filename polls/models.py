@@ -23,5 +23,5 @@ class Booking(models.Model):
     booking_id = models.IntegerField()
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
-    creative_id = models.ForeignKey(Creative, on_delete=models.CASCADE)
-    location_id = models.ForeignKey(Location, on_delete=models.CASCADE)
+    creative = models.ForeignKey(Creative, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)

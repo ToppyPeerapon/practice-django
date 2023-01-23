@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if booking %}
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Booking Id</th>
+                <th scope="col">Location Id</th>
+                <th scope="col">Creative Id</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking_data in booking %}
+                <tr>
+                    <th scope="row">
+                        <a href="{% url 'advertisement:booking_id' booking_data.id %}">
+                            {{ booking_data.id }}
+                        </a>
+                    </th>
+                    <th>{{ booking_data.booking_id }}</th>
+                    <th>{{ booking_data.location_id }}</th>
+                    <th>{{ booking_data.creative_id }}</th>
+                    <th>{{ booking_data.start_date }}</th>
+                    <th>{{ booking_data.end_date }}</th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% endblock %}

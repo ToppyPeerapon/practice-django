@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>Id</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.id }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>Booking Id</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.booking_id }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>Location Id</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.location_id }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>Creative Id</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.creative }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>Start Date</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.start_date }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <span>End Date</span>
+            </div>
+            <div class="col-md-3">
+                <span>{{ data.end_date }}</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

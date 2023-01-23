@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form novalidate action="{% url 'advertisement:create_booking' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="row my-3">
+                <div class="col-3">
+                    {{ field.label }}
+                </div>
+                <div class="col-4">
+                    {{ field }}
+                </div>
+            </div>
+            {% for error in field.errors %}
+                <p style="color:red">{{ error }}</p>
+            {% endfor %}
+        {% endfor %}
+        <input type="submit" value="create" class="btn btn-primary">
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'advertisement:create_booking' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Booking Id</label>
+        <input type="number" class="form-control" name="booking_id">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location Id</label>
+        <input type="text" class="form-control" name="location_id">
+    </div>
+        <div class="mb-3">
+        <label class="form-label">Creative Id</label>
+        <input type="text" class="form-control" name="creative_id">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Start Date</label>
+        <input type="datetime-local" class="form-control" name="start_date">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">End Date</label>
+        <input type="datetime-local" class="form-control" name="end_date">
+    </div>
+
+    <input type="submit" value="create" class="btn btn-primary">
+</form>
+{% endblock %}
